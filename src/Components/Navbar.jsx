@@ -1,31 +1,61 @@
-import {NavLink } from 'react-router-dom';
-import mainLogo from '../assets/logo-sm.png';
-import wraper from '../assets/wraper.png';
-import useSpecificCategory from '../Hooks/useSpecificCategory';
+import { NavLink } from "react-router-dom";
+import mainLogo from "../assets/logo-sm.png";
+import wraper from "../assets/wraper.png";
+import useSpecificCategory from "../Hooks/useSpecificCategory";
 
 export default function Navbar() {
+  const { specificCategory } = useSpecificCategory();
 
-    const {specificCategory} = useSpecificCategory();
+  return (
+    <>
+      <div className="relative">
+        <img
+          src={wraper}
+          alt="game banner"
+          className="w-full h-52 object-cover bg-[#2A2E33]"
+        />
 
-    
+        <nav className="bg-linear-to-r from-[#3A497B] via-[#2c3e5f] to-[#3A497B] p-5 flex flex-col lg:flex-row justify-between items-center gap-5 w-[95%] lg:w-3/4 mx-auto -mt-10 rounded-2xl shadow-2xl border-2 border-[#4a5a8f] backdrop-blur-sm">
+          {/* Logo Section */}
+          <div className="flex items-center gap-x-3 group">
+            <img
+              src={mainLogo}
+              alt="GameSeek Logo"
+              className="w-12 h-12 group-hover:scale-110 transition-transform"
+            />
+            <h1 className="text-white text-3xl font-bold tracking-wider">
+              Game<span className="text-blue-400">Seek</span>
+            </h1>
+          </div>
 
-  return  <>
-    <img src={wraper} alt="game img" className='opacity-100 object-cover bg-[#2A2E33] w-full h-62.5'/>
-   <nav className="bg-[#3A497B] p-4 flex justify-between items-center w-3/4 mx-auto -mt-9 rounded-2xl shadow-2xl">
-       <div className='flex items-center gap-x-2'>
-         <img src={mainLogo} alt="mainLogo GameSeek" className='w-10' />
-         <h1 className='text-white text-2xl'>GameSeek</h1>
-       </div>
-        <ul className='flex gap-2'>
-            <NavLink to={`mmorpg`} onClick={()=>{specificCategory('mmorpg')}}><li className="text-white">Mmorpg</li></NavLink>
-            <NavLink to={`shooter`} onClick={()=>{specificCategory('shooter')}}><li className="text-white">Shooter</li></NavLink>
-            <NavLink to={`sailing`} onClick={()=>{specificCategory('sailing')}}><li className="text-white">Sailing</li></NavLink>
-            <NavLink to={`permadeath`} onClick={()=>{specificCategory('permadeath')}}><li className="text-white">Permadeath</li></NavLink>
-            <NavLink to={`superhero`} onClick={()=>{specificCategory('superhero')}}><li className="text-white">Superhero</li></NavLink>
-            <NavLink to={`pixel`} onClick={()=>{specificCategory('pixel')}}><li className="text-white">Pixel</li></NavLink>
-        </ul>
-
-    </nav>
-  
-  </>
+          {/* Navigation Links */}
+          <ul className="flex gap-2 flex-wrap justify-center">
+            {[
+              { name: "mmorpg", label: "MMORPG" },
+              { name: "shooter", label: "Shooter" },
+              { name: "sailing", label: "Sailing" },
+              { name: "permadeath", label: "Permadeath" },
+              { name: "superhero", label: "Superhero" },
+              { name: "pixel", label: "Pixel" },
+            ].map((category) => (
+              <NavLink
+                key={category.name}
+                to={category.name}
+                onClick={() => specificCategory(category.name)}
+                className={({ isActive }) =>
+                  `text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 ${
+                    isActive
+                      ? "bg-blue-600 shadow-lg shadow-blue-500/50"
+                      : "bg-white/10 hover:bg-blue-600"
+                  }`
+                }
+              >
+                {category.label}
+              </NavLink>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </>
+  );
 }
