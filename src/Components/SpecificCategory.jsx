@@ -3,7 +3,6 @@ import useSpecificCategory from '../Hooks/useSpecificCategory';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Loading from './Loading';
-import {Helmet} from 'react-helmet-async';
  
 export default function SpecificCategory() {
 
@@ -30,15 +29,7 @@ export default function SpecificCategory() {
 
 
  return <>
-   
-   <Helmet>
-      <title>{category ? `${category} Games - GameSeek` : 'All Games - GameSeek'}</title>
-      <meta name="description" content={category ? `Explore the best free-to-play ${category} games on GameSeek. Discover exciting adventures, thrilling action, and immersive gameplay in our curated selection of top-rated ${category} titles.` : 'Discover a vast collection of free-to-play games on GameSeek. From action-packed shooters to immersive RPGs, find your next favorite game and dive into endless fun without spending a dime.'} />
-      <meta name="keywords" content={category ? `${category} games, free ${category} games, online ${category} games, multiplayer ${category} games` : 'free games, online games, multiplayer games, RPG games, shooter games, strategy games'} />
-   </Helmet>
-   
-
-
+    
  {isLoading && loading ? <Loading/> : <header>
   <h1 className='text-blue-400 text-4xl text-center mt-10 mb-8 font-bold capitalize'>{category}  Games</h1>
   <section className='flex flex-wrap px-5 gap-5'>

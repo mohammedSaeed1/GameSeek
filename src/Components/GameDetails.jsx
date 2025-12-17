@@ -25,6 +25,7 @@ export default function GameDetails() {
 
   return (
     <>
+
     {isLoading ? <Loading/> :  <section className="sm:w-[85%] mx-auto py-10">
           <MainLogoWithName/>
         <h1 className="text-[#50A2FF] text-3xl font-extrabold text-center my-10">
