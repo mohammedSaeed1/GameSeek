@@ -3,6 +3,9 @@ import axios from 'axios';
 
 export default function useSpecificCategory() {
 
+  const [loading, setLoading] = useState(true);
+  
+
 
   const [specificCategoryData,setSpecificCategoryData] =useState([]);
 
@@ -15,11 +18,12 @@ export default function useSpecificCategory() {
     } ).then((response) => {
       console.log(response.data);
         setSpecificCategoryData(response.data);
+        setLoading(false);
     }).catch((error) => {
       console.error(error);
     });
   }
   
   
-    return {specificCategory , specificCategoryData , setSpecificCategoryData};
+    return {specificCategory , specificCategoryData , setSpecificCategoryData , loading};
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import { useEffect, useState} from 'react'
 import useSpecificCategory from '../Hooks/useSpecificCategory';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -6,32 +6,33 @@ import Loading from './Loading';
  
 export default function SpecificCategory() {
 
-  const {specificCategory , specificCategoryData} = useSpecificCategory();
+  const {specificCategory , specificCategoryData , loading} = useSpecificCategory();
   const {category} =  useParams();
   const [allGames, setAllGames] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-    
-   function getAllGames(){
-     axios.get(`https://corsproxy.io/?https://www.freetogame.com/api/games`)
-     .then(response => {
-     setAllGames(response.data);
-     setIsLoading(false);
-     })
-   }
-     
+
+  const gamesToDisplay = category ? specificCategoryData : allGames;
+  
+  
+  function getAllGames(){
+    axios.get(`https://corsproxy.io/?https://www.freetogame.com/api/games`)
+    .then(response => {
+      setAllGames(response.data);
+      setIsLoading(false);
+    })
+  }
+  
   useEffect(() => {  
-    getAllGames();
-  // specificCategory(category);
+    category ? specificCategory(category) :getAllGames();
   }, [category])
 
 
 
  return <>
-
- {isLoading ? <Loading/> : <header>
+ {isLoading && loading ? <Loading/> : <header>
   <h1 className='text-blue-400 text-4xl text-center mt-10 mb-8 font-bold capitalize'>{category}  Games</h1>
   <section className='flex flex-wrap px-5 gap-5'>
-    {allGames?.map(game => (
+    {gamesToDisplay?.map(game => (
       <Link 
         key={game.id} 
         to={`/GameDetails/${game.id}`}
