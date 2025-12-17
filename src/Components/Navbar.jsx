@@ -1,4 +1,4 @@
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 import mainLogo from '../assets/logo-sm.png';
 
 export default function Navbar() {
@@ -9,14 +9,12 @@ export default function Navbar() {
          <h1 className='text-white text-2xl'>GameSeek</h1>
        </div>
         <ul className='flex gap-2'>
-            <BrowserRouter>
             <NavLink to={'/mmorpg'}><li className="text-white">mmorpg</li></NavLink>
             <NavLink to={'/shooter'}><li className="text-white">shooter</li></NavLink>
             <NavLink to={'/sailing'}><li className="text-white">sailing</li></NavLink>
             <NavLink to={'/permadeath'}><li className="text-white">permadeath</li></NavLink>
             <NavLink to={'/superhero'}><li className="text-white">superhero</li></NavLink>
             <NavLink to={'/pixel'}><li className="text-white">pixel</li></NavLink>
-            </BrowserRouter>
         </ul>
 
     </nav>
