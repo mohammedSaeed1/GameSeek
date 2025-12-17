@@ -20,7 +20,7 @@ export default function SpecificCategory() {
       <Link 
         key={game.id} 
         to={`/GameDetails/${game.id}`}
-        className='w-[calc(25%-1.25rem)] bg-[#1a1a2e] rounded-lg border-2 border-[#333] hover:border-blue-600 hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden'
+        className='w-full md:w-[47%] lg:w-[23%] bg-[#1a1a2e] rounded-lg border-2 border-[#333] hover:border-blue-600 hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden'
       >
         <div className='relative'>
           <img src={game?.thumbnail} alt={game?.title} className='w-full h-48 object-cover'/>
