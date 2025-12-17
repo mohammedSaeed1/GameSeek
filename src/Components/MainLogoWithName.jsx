@@ -5,7 +5,7 @@ export default function MainLogoWithName() {
   return (
     <>
     <Link to="/">
-      <div className="flex items-center gap-x-3 group">
+      <div className="flex items-center gap-x-1 group ml-2">
         <img
           src={mainLogo}
           alt="GameSeek Logo"
