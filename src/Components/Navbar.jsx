@@ -17,12 +17,12 @@ export default function Navbar() {
          <h1 className='text-white text-2xl'>GameSeek</h1>
        </div>
         <ul className='flex gap-2'>
-            <NavLink to={`mmorpg`} onClick={()=>{specificCategory('mmorpg')}}><li className="text-white">mmorpg</li></NavLink>
-            <NavLink to={`shooter`} onClick={()=>{specificCategory('shooter')}}><li className="text-white">shooter</li></NavLink>
-            <NavLink to={`sailing`} onClick={()=>{specificCategory('sailing')}}><li className="text-white">sailing</li></NavLink>
-            <NavLink to={`permadeath`} onClick={()=>{specificCategory('permadeath')}}><li className="text-white">permadeath</li></NavLink>
-            <NavLink to={`superhero`} onClick={()=>{specificCategory('superhero')}}><li className="text-white">superhero</li></NavLink>
-            <NavLink to={`pixel`} onClick={()=>{specificCategory('pixel')}}><li className="text-white">pixel</li></NavLink>
+            <NavLink to={`mmorpg`} onClick={()=>{specificCategory('mmorpg')}}><li className="text-white">Mmorpg</li></NavLink>
+            <NavLink to={`shooter`} onClick={()=>{specificCategory('shooter')}}><li className="text-white">Shooter</li></NavLink>
+            <NavLink to={`sailing`} onClick={()=>{specificCategory('sailing')}}><li className="text-white">Sailing</li></NavLink>
+            <NavLink to={`permadeath`} onClick={()=>{specificCategory('permadeath')}}><li className="text-white">Permadeath</li></NavLink>
+            <NavLink to={`superhero`} onClick={()=>{specificCategory('superhero')}}><li className="text-white">Superhero</li></NavLink>
+            <NavLink to={`pixel`} onClick={()=>{specificCategory('pixel')}}><li className="text-white">Pixel</li></NavLink>
         </ul>
 
     </nav>

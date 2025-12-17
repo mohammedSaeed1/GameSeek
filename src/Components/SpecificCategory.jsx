@@ -14,7 +14,7 @@ export default function SpecificCategory() {
 
  return <>
     <header>
-      <h1 className=' text-white text-3xl text-center mt-10 mb-5'>Specific Category Games</h1>
+      <h1 className=' text-blue-400 text-3xl text-center mt-10 mb-5 font-serif'>{category} Games</h1>
       <section className='flex flex-wrap px-5'>
         {specificCategoryData.map(game => <div key={game.id} className=' w-1/4 px-3 py-4  rounded-lg border-2 border-[#333] hover:border-blue-600 mb-5'>
               <img src={game.thumbnail} alt={game.title} className='w-full'/>
