@@ -7,11 +7,13 @@ import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient()
 
-const router = createBrowserRouter([{
-  path: "", element: <Layout/> ,children:[{
-   path: "/:category" , index: true ,element: <SpecificCategory/>},
-  {path: "GameDetails" , element: <GameDetails/>}]
-  }])
+const router = createBrowserRouter([
+  {path: "", element: <Layout/> ,children:[
+  {path: "/" , index: true ,element: <SpecificCategory/>},
+  {path: "/:category" ,element: <SpecificCategory/>},]
+  },
+  {path: "GameDetails/:id" , element: <GameDetails/>}
+])
 
 export default function App() {
   return  <>

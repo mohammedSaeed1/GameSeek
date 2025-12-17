@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react'
 import useSpecificCategory from '../Hooks/useSpecificCategory';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
  
 export default function SpecificCategory() {
 
@@ -16,7 +16,9 @@ export default function SpecificCategory() {
     <header>
       <h1 className=' text-blue-400 text-3xl text-center mt-10 mb-5 font-serif'>{category} Games</h1>
       <section className='flex flex-wrap px-5'>
-        {specificCategoryData.map(game => <div key={game.id} className=' w-1/4 px-3 py-4  rounded-lg border-2 border-[#333] hover:border-blue-600 mb-5'>
+        {specificCategoryData.map(game =>
+          <div key={game.id} className=' w-1/4 px-3 py-4  rounded-lg border-2 border-[#333] hover:border-blue-600 mb-5'>
+           <Link to={`/GameDetails/${game.id}`}>
               <img src={game.thumbnail} alt={game.title} className='w-full'/>
               <div className='flex justify-between items-center'>
               <h2 className='text-white font-medium mt-2 inline'>{game.title}</h2>
@@ -28,6 +30,7 @@ export default function SpecificCategory() {
                 <h5 className='text-white'>{game.platform}</h5>
               </div>
               <h6 className='text-[#7E8184]'>Release Date : {game.release_date}</h6>
+        </Link>
         </div>
 )}
       
