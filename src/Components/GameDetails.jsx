@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MainLogoWithName from "./MainLogoWithName";
 import Loading from "./Loading";
 
@@ -9,7 +9,6 @@ export default function GameDetails() {
   const [gameDetails, setGameDetails] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
   
-
   function getGameDetails(id) {
     axios
       .get(`https://corsproxy.io/?https://www.freetogame.com/api/game?id=${id}`)
@@ -81,14 +80,14 @@ export default function GameDetails() {
               {gameDetails?.description}
             </p>
 
-            <a
-              href={gameDetails?.game_url}
+            <Link
+              to={gameDetails?.game_url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
             >
               Play Now Free
-            </a>
+            </Link>
           </div>
         </div>
 
