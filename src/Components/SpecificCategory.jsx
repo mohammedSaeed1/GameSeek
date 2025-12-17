@@ -1,19 +1,18 @@
 import React, { useEffect} from 'react'
 import useSpecificCategory from '../Hooks/useSpecificCategory';
-
+import { useParams } from 'react-router-dom';
  
 export default function SpecificCategory() {
 
   const {specificCategory , specificCategoryData} = useSpecificCategory();
-
-
+  const {category} =  useParams();
+   
   
   useEffect(() => {  
-  specificCategory();
-  }, [])
-  
+  specificCategory(category);
+  }, [category])
+
  return <>
-    
     <header>
       <h1 className=' text-white text-3xl text-center mt-10 mb-5'>Specific Category Games</h1>
       <section className='flex flex-wrap px-5'>
@@ -30,7 +29,7 @@ export default function SpecificCategory() {
               </div>
               <h6 className='text-[#7E8184]'>Release Date : {game.release_date}</h6>
         </div>
-          )}
+)}
       
       </section>
 

@@ -9,7 +9,7 @@ const queryClient = new QueryClient()
 
 const router = createBrowserRouter([{
   path: "", element: <Layout/> ,children:[{
-   path: "/" , index: true ,element: <SpecificCategory/>},
+   path: "/:category" , index: true ,element: <SpecificCategory/>},
   {path: "GameDetails" , element: <GameDetails/>}]
   }])
 
