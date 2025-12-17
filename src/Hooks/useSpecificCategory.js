@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
 
 export default function useSpecificCategory() {
 
 
-    const [specificCategoryData,setSpecificCategoryData] =useState([]);
+  const [specificCategoryData,setSpecificCategoryData] =useState([]);
 
-  
-  const query = useQuery({
-    queryKey: ['specificCategory'],
-    queryFn: () => specificCategory,
-  })
- 
   function specificCategory(category = 'shooter') {
     axios.get(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`,{
       headers: {
@@ -28,5 +21,5 @@ export default function useSpecificCategory() {
   }
   
   
-    return {query , specificCategory , specificCategoryData , setSpecificCategoryData};
+    return {specificCategory , specificCategoryData , setSpecificCategoryData};
 }

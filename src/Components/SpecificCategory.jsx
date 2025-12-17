@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
  
 export default function SpecificCategory() {
 
-  const {specificCategory , specificCategoryData , query} = useSpecificCategory();
+  const {specificCategory , specificCategoryData} = useSpecificCategory();
   const {category} =  useParams();
     
      
@@ -14,9 +14,7 @@ export default function SpecificCategory() {
   specificCategory(category);
   }, [category])
 
-  if (query.isPending) {
-    return <h1 className='bg-amber-400'>Loading......</h1> 
-  }
+
 
  return <>
     <header>

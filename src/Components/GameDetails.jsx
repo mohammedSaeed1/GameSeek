@@ -23,7 +23,7 @@ export default function GameDetails() {
     <>
       <section className="sm:w-[85%] mx-auto py-10">
           <MainLogoWithName/>
-        <h1 className="text-white text-3xl font-bold text-center my-10">
+        <h1 className="text-[#50A2FF] text-3xl font-extrabold text-center my-10">
           Game Details
         </h1>
         {/* Main Game Info */}
@@ -248,7 +248,7 @@ export default function GameDetails() {
 
         {/* Screenshots */}
         {gameDetails?.screenshots && gameDetails?.screenshots.length > 0 && (
-          <div className="mt-10 ">
+          <div className="mt-10 text-center ">
             <h3 className="text-white text-3xl font-bold mb-6">Screenshots</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {gameDetails?.screenshots.map((screenshot, index) => (

@@ -1,26 +1,26 @@
 /* eslint-disable no-dupe-keys */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SpecificCategory from './Components/SpecificCategory';
+import SpecificCategory from "./Components/SpecificCategory";
 import Layout from "./Components/Layout";
-import GameDetails from './Components/GameDetails';
-import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
-
-const queryClient = new QueryClient()
+import GameDetails from "./Components/GameDetails";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
-  {path: "", element: <Layout/> ,children:[
-  {path: "/" , index: true ,element: <SpecificCategory/>},
-  {path: "/:category" ,element: <SpecificCategory/>},]
+  {
+    path: "",
+    element: <Layout />,
+    children: [
+      { path: "/", index: true, element: <SpecificCategory /> },
+      { path: "/:category", element: <SpecificCategory /> },
+    ],
   },
-  {path: "GameDetails/:id" , element: <GameDetails/>}
-])
+  { path: "GameDetails/:id", element: <GameDetails /> },
+]);
 
 export default function App() {
-  return  <>
-    
-    <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router}/>  
-    </QueryClientProvider>
-  </>
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
-
