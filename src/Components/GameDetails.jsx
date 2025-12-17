@@ -21,17 +21,17 @@ export default function GameDetails() {
 
 
   return <>
-    <section className="w-[85%] mx-auto py-10">
+    <section className="sm:w-[85%] mx-auto py-10">
       <h1 className="text-white text-4xl font-bold text-center mb-10">Game Details</h1>
       
       {/* Main Game Info */}
-      <div className="flex items-start justify-between gap-7 mb-10">
-        <div className="img w-1/3">
+      <div className="sm:flex items-start justify-between gap-7 mb-10">
+        <div className="img w-full sm:w-1/3">
           <img src={gameDetails?.thumbnail} alt={gameDetails?.title} className="w-full rounded-lg shadow-lg"/>
         </div>
         
-        <div className="details w-2/3 text-white">
-          <h2 className="text-4xl font-bold mb-4">{gameDetails?.title}</h2>
+        <div className="details w-2/3 text-white mx-auto">
+          <h2 className="text-4xl font-bold mb-4 mt-1 sm:mt-0">{gameDetails?.title}</h2>
           
           <div className="flex gap-3 mb-4">
             <span className="bg-blue-600 rounded-md px-3 py-1 text-sm font-semibold">
@@ -45,20 +45,20 @@ export default function GameDetails() {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-5 text-sm">
-            <div className="bg-[#1a1a2e] p-3 rounded-lg">
+          <div className="text-sm">
+            <div className="bg-[#1a1a2e] p-3 rounded-lg my-2">
               <span className="text-gray-400">Publisher:</span>
               <p className="font-semibold">{gameDetails?.publisher}</p>
             </div>
-            <div className="bg-[#1a1a2e] p-3 rounded-lg">
+            <div className="bg-[#1a1a2e] p-3 rounded-lg my-2">
               <span className="text-gray-400">Developer:</span>
               <p className="font-semibold">{gameDetails?.developer}</p>
             </div>
-            <div className="bg-[#1a1a2e] p-3 rounded-lg">
+            <div className="bg-[#1a1a2e] p-3 rounded-lg my-2">
               <span className="text-gray-400">Release Date:</span>
               <p className="font-semibold">{gameDetails?.release_date}</p>
             </div>
-            <div className="bg-[#1a1a2e] p-3 rounded-lg">
+            <div className="bg-[#1a1a2e] p-3 rounded-lg my-2">
               <span className="text-gray-400">Status:</span>
               <p className="font-semibold">{gameDetails?.status}</p>
             </div>
@@ -158,7 +158,7 @@ export default function GameDetails() {
 
       {/* Screenshots */}
       {gameDetails?.screenshots && gameDetails?.screenshots.length > 0 && (
-        <div className="mt-10">
+        <div className="mt-10 ">
           <h3 className="text-white text-3xl font-bold mb-6">Screenshots</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {gameDetails?.screenshots.map((screenshot, index) => (
@@ -166,7 +166,7 @@ export default function GameDetails() {
                 key={index} 
                 src={screenshot.image} 
                 alt={`Screenshot ${index + 1}`}
-                className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
+                className="w-[90%] m-auto text-center sm:w-full rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer"
               />
             ))}
           </div>
