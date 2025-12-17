@@ -15,21 +15,21 @@ export default function Navbar() {
           className="w-full h-52 object-cover bg-[#2A2E33]"
         />
 
-        <nav className="bg-linear-to-r from-[#3A497B] via-[#2c3e5f] to-[#3A497B] p-5 flex flex-col lg:flex-row justify-between items-center gap-5 w-[95%] lg:w-3/4 mx-auto -mt-10 rounded-2xl shadow-2xl border-2 border-[#4a5a8f] backdrop-blur-sm">
+        <nav className="bg-linear-to-r from-[#3A497B] via-[#2c3e5f] to-[#3A497B] p-3 sm:flex  lg:flex-row justify-between items-center gap-5 w-[95%] lg:w-3/4 mx-auto -mt-10 rounded-2xl shadow-2xl border-2 border-[#4a5a8f] backdrop-blur-sm">
           {/* Logo Section */}
           <div className="flex items-center gap-x-3 group">
             <img
               src={mainLogo}
               alt="GameSeek Logo"
-              className="w-12 h-12 group-hover:scale-110 transition-transform"
+              className="w-8 h-8 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform"
             />
-            <h1 className="text-white text-3xl font-bold tracking-wider">
+            <h1 className="text-white sm:text-3xl font-bold tracking-wider">
               Game<span className="text-blue-400">Seek</span>
             </h1>
           </div>
 
           {/* Navigation Links */}
-          <ul className="flex gap-2 flex-wrap justify-center">
+          <ul className="sm:flex gap-2 flex-wrap justify-center">
             {[
               { name: "mmorpg", label: "MMORPG" },
               { name: "shooter", label: "Shooter" },
@@ -43,13 +43,7 @@ export default function Navbar() {
                 to={category.name}
                 onClick={() => specificCategory(category.name)}
                 className={({ isActive }) =>
-                  `text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 ${
-                    isActive
-                      ? "bg-blue-600 shadow-lg shadow-blue-500/50"
-                      : "bg-white/10 hover:bg-blue-600"
-                  }`
-                }
-              >
+                `text-white px-4 py-2 block mb-1 mt-1  rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 ${isActive? "bg-blue-600 shadow-lg shadow-blue-500/50": "bg-white/10 hover:bg-blue-600"}`}>
                 {category.label}
               </NavLink>
             ))}
