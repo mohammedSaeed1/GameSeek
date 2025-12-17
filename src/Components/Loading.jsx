@@ -1,10 +1,7 @@
-import React from 'react'
-
 export default function Loading() {
   return <>
-    <div className="flex justify-center items-center h-screen"></div>
-      <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-500">
-        Loading...
-      </div>
+  <section className="flex justify-center items-center">
+      <div className="animate-spin flex rounded-full h-32 w-32 border-t-4 border-blue-500 mt-6"></div>
+  </section>
   </>
 }

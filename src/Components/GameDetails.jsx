@@ -2,16 +2,20 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MainLogoWithName from "./MainLogoWithName";
+import Loading from "./Loading";
 
 export default function GameDetails() {
   const { id } = useParams();
   const [gameDetails, setGameDetails] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+  
 
   function getGameDetails(id) {
     axios
       .get(`https://corsproxy.io/?https://www.freetogame.com/api/game?id=${id}`)
       .then((response) => {
         setGameDetails(response.data);
+        setIsLoading(false);
       });
   }
 
@@ -21,7 +25,7 @@ export default function GameDetails() {
 
   return (
     <>
-      <section className="sm:w-[85%] mx-auto py-10">
+    {isLoading ? <Loading/> :  <section className="sm:w-[85%] mx-auto py-10">
           <MainLogoWithName/>
         <h1 className="text-[#50A2FF] text-3xl font-extrabold text-center my-10">
           Game Details
@@ -263,6 +267,7 @@ export default function GameDetails() {
           </div>
         )}
       </section>
+    }
     </>
   );
 }
