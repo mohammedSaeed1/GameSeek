@@ -16,14 +16,9 @@ export default function useSpecificCategory() {
         'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
       }
     } ).then((response) => {
-      console.log(response.data);
         setSpecificCategoryData(response.data);
         setLoading(false);
-    }).catch((error) => {
-      console.error(error);
-    });
+    })
   }
-  
-  
     return {specificCategory , specificCategoryData , setSpecificCategoryData , loading};
 }
