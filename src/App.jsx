@@ -8,10 +8,9 @@ import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([{
-  path: "/", element: <Layout/> ,children: [{
-    path: "/" , index: true ,element: <SpecificCategory/>,
-    path: "GameDetails" , element: <GameDetails/>,
-  }]
+  path: "", element: <Layout/> ,children:[{
+   path: "/" , index: true ,element: <SpecificCategory/>},
+  {path: "GameDetails" , element: <GameDetails/>}]
   }])
 
 export default function App() {
