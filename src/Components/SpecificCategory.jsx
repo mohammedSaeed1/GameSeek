@@ -4,19 +4,25 @@ import { Link, useParams } from 'react-router-dom';
  
 export default function SpecificCategory() {
 
-  const {specificCategory , specificCategoryData} = useSpecificCategory();
+  const {specificCategory , specificCategoryData , query} = useSpecificCategory();
   const {category} =  useParams();
-   
+    
+     
+  
   
   useEffect(() => {  
   specificCategory(category);
   }, [category])
 
+  if (query.isPending) {
+    return <h1 className='bg-amber-400'>Loading......</h1> 
+  }
+
  return <>
     <header>
   <h1 className='text-blue-400 text-4xl text-center mt-10 mb-8 font-bold capitalize'>{category} Games</h1>
   <section className='flex flex-wrap px-5 gap-5'>
-    {specificCategoryData.map(game => (
+    {specificCategoryData?.map(game => (
       <Link 
         key={game.id} 
         to={`/GameDetails/${game.id}`}
