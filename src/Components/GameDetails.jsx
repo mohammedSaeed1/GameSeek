@@ -40,12 +40,12 @@ export default function GameDetails() {
             />
           </div>
 
-          <div className="details w-2/3 text-white mx-auto">
-            <h2 className="text-4xl font-bold mb-4 mt-1 sm:mt-0">
+          <div className="details sm:w-2/3 text-white mx-auto px-3 sm:px-0 mt-6 sm:mt-0">
+            <h2 className="text-3xl text-center sm:text-start sm:text-4xl font-bold mb-4 mt-1 sm:mt-0">
               {gameDetails?.title}
             </h2>
 
-            <div className="flex gap-3 mb-4">
+            <div className="flex justify-evenly sm:justify-normal gap-3 mb-4">
               <span className="bg-blue-600 rounded-md px-3 py-1 text-sm font-semibold">
                 {gameDetails?.genre}
               </span>
@@ -76,7 +76,7 @@ export default function GameDetails() {
               </div>
             </div>
 
-            <p className="text-gray-300 leading-relaxed mb-5">
+            <p className="text-gray-300 sm:leading-relaxed mb-5">
               {gameDetails?.description}
             </p>
 
