@@ -1,4 +1,3 @@
-/* eslint-disable no-dupe-keys */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SpecificCategory from "./Components/SpecificCategory";
 import Layout from "./Components/Layout";

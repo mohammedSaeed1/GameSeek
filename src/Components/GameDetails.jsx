@@ -93,7 +93,7 @@ export default function GameDetails() {
 
         {/* System Requirements */}
         {gameDetails?.minimum_system_requirements && (
-          <div className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] p-8 rounded-lg shadow-xl border border-[#333]">
+          <div className="bg-linear-to-br from-[#1a1a2e] to-[#16213e] p-8 rounded-lg shadow-xl border border-[#333]">
             <h3 className="text-white text-3xl font-bold mb-6 flex items-center gap-3">
               <svg
                 className="w-8 h-8 text-blue-500"
