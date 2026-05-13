@@ -10,7 +10,6 @@ The project is built with React and Vite, providing a fast and responsive user e
 
 ## ✨ Features
 
-* 🔍 Search for games by name
 * 🎮 Browse popular and trending games
 * ⭐ View game ratings and release dates
 * 🖼️ Display game images and cover art
