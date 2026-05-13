@@ -1,16 +1,115 @@
-# React + Vite
+# 🎮 GameSeek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GameSeek is a modern web application for discovering video games and exploring detailed information such as ratings, genres, platforms, and screenshots.
 
-Currently, two official plugins are available:
+The project is built with React and Vite, providing a fast and responsive user experience for gamers who want to search and browse games in an intuitive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## React Compiler
+**Demo:** https://game-seek-psi.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 🔍 Search for games by name
+* 🎮 Browse popular and trending games
+* ⭐ View game ratings and release dates
+* 🖼️ Display game images and cover art
+* 🏷️ Explore genres and supported platforms
+* 📱 Fully responsive design
+* ⚡ Fast loading and smooth UI interactions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+
+### Tooling
+
+* ESLint
+
+### Deployment
+
+* Vercel
+
+## 📁 Project Structure
+
+```bash
+GameSeek/
+├── public/               # Static assets
+├── src/
+│   ├── assets/           # Images and other assets
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Application pages
+│   ├── services/         # API calls and helpers
+│   ├── App.jsx           # Main application component
+│   └── main.jsx          # Entry point
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+> Note: The exact internal structure inside `src/` may evolve as the project grows.
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mohammedSaeed1/GameSeek.git
+cd GameSeek
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+### 4. Open in your browser
+
+```bash
+http://localhost:5173
+```
+
+## 📦 Available Scripts
+
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start development server         |
+| `npm run build`   | Create production build          |
+| `npm run preview` | Preview production build locally |
+| `npm run lint`    | Run ESLint                       |
+
+## 🔌 API Integration
+
+GameSeek likely consumes a gaming API (such as RAWG or a similar service) to retrieve game data.
+
+## 🎯 Use Cases
+
+* Discover new games
+* Search for a specific title
+* Check ratings before playing
+* Explore release dates and genres
+
+## 👨‍💻 Author
+
+**Mohamed Saeed**
+
+* GitHub: https://github.com/mohammedSaeed1
+* LinkedIn: https://www.linkedin.com/in/mohamed-saeed-030246272/
+
+---
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
