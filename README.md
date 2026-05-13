@@ -53,9 +53,6 @@ GameSeek/
 ├── vite.config.js
 └── README.md
 ```
-
-> Note: The exact internal structure inside `src/` may evolve as the project grows.
-
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
@@ -91,10 +88,6 @@ http://localhost:5173
 | `npm run build`   | Create production build          |
 | `npm run preview` | Preview production build locally |
 | `npm run lint`    | Run ESLint                       |
-
-## 🔌 API Integration
-
-GameSeek likely consumes a gaming API (such as RAWG or a similar service) to retrieve game data.
 
 ## 🎯 Use Cases
 
